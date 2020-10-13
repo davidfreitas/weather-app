@@ -42,6 +42,10 @@ final class LocationDetailsViewController: UIViewController {
         struct StackView {
             static let spacing: CGFloat = 20
         }
+
+        struct SunriseSunsetView {
+            static let height: CGFloat = 60
+        }
     }
 
     private let backgroundImageView: UIImageView = {
@@ -125,6 +129,7 @@ final class LocationDetailsViewController: UIViewController {
         layout.itemSize = Constants.ForecastCell.size
         layout.minimumLineSpacing = Constants.ForecastCell.spacing
         layout.minimumInteritemSpacing = Constants.ForecastCell.spacing
+        layout.sectionInset = UIEdgeInsets(top: 0, left: Constants.padding, bottom: 0, right: Constants.padding)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ForecastCollectionViewCell.self, forCellWithReuseIdentifier: Constants.ForecastCell.reuseIdentifier)
@@ -161,9 +166,9 @@ final class LocationDetailsViewController: UIViewController {
         titleStackView.addArrangedSubview(closeButton)
         stackView.addArrangedSubview(titleStackView)
         stackView.addArrangedSubview(forecastTitleLabel)
-        stackView.addArrangedSubview(collectionView)
-        stackView.addArrangedSubview(sunriseSunsetView)
         scrollView.addSubview(stackView)
+        scrollView.addSubview(collectionView)
+        scrollView.addSubview(sunriseSunsetView)
         view.addSubview(backgroundImageView)
         view.addSubview(scrollView)
         view.addSubview(activityIndicator)
@@ -186,11 +191,17 @@ final class LocationDetailsViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: Constants.padding),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -Constants.padding),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: Constants.padding),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -Constants.padding),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: Constants.padding * -2),
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.StackView.spacing),
+            collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: Constants.ForecastCell.size.height),
+            sunriseSunsetView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: Constants.StackView.spacing),
+            sunriseSunsetView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: Constants.padding),
+            sunriseSunsetView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -Constants.padding),
+            sunriseSunsetView.heightAnchor.constraint(equalToConstant: Constants.SunriseSunsetView.height),
             disclaimarerLabel.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: Constants.StackView.spacing),
             disclaimarerLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.padding),
             disclaimarerLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
