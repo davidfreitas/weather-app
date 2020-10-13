@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  UIComponents
+
+  Created by David Freitas on 13/10/20.
+  Copyright © 2020 SHAPE A/S. All rights reserved.
+*/
+
+"SunriseSunsetView-Sunrise-Title" = "Sunrise";
+"SunriseSunsetView-Sunset-Title" = "Sunset";
+
+"WindView-Direction-Title" = "Wind Direction";
+"WindView-Speed-Title" = "Wind Direction";

@@ -10,16 +10,20 @@
 import MapKit
 import API
 
-final class FindLocationRouter {
+final class LocationDetailsRouter {
     let api: ForecastClient
+    weak var presentingViewController: UIViewController?
     
-    init(api apiClient: ForecastClient) {
+    init(api apiClient: ForecastClient, presentingViewController: UIViewController) {
         self.api = apiClient
+        self.presentingViewController = presentingViewController
     }
 }
 
-extension FindLocationRouter: FindLocationInteractorAction {
-    func locationSelected(at coordinate: CLLocationCoordinate2D) {
-
+extension LocationDetailsRouter: LocationDetailsInteractorAction {
+    func backButtonTapped() {
+        DispatchQueue.main.async { [weak self] in
+            self?.presentingViewController?.dismiss(animated: true)
+        }
     }
 }

@@ -8,13 +8,14 @@
 
 import UIKit
 import API
+import CoreLocation
 
-struct FindLocationConfig {
-    static func setup(api apiClient: ForecastClient) -> UIViewController {
-        let viewController = FindLocationViewController()
-        let interactor = FindLocationInteractor(api: apiClient)
-        let presenter = FindLocationPresenter()
-        let router = FindLocationRouter(api: apiClient)
+struct LocationDetailsConfig {
+    static func setup(api apiClient: ForecastClient, coordinate: CLLocationCoordinate2D) -> UIViewController {
+        let viewController = LocationDetailsViewController()
+        let interactor = LocationDetailsInteractor(api: apiClient, coordinate: coordinate)
+        let presenter = LocationDetailsPresenter()
+        let router = LocationDetailsRouter(api: apiClient, presentingViewController: viewController)
         
         viewController.output = interactor
         interactor.action = router

@@ -6,44 +6,55 @@
 //  Copyright © 2019 SHAPE A/S. All rights reserved.
 //
 
-import MapKit
+import CoreLocation
 import API
 import Entities
 
-protocol FindLocationInteractorOutput: class {
+protocol LocationDetailsInteractorOutput: class {
+    func forecastListDidStartLoading()
+    func forecastListDidStopLoading()
+    func forecastListDidLoad(_ forecastList: ForecastList)
+    func forecastListDidFailLoading(withError error: Error)
 }
 
-protocol FindLocationInteractorAction: class {
-    func locationSelected(at coordinate: CLLocationCoordinate2D)
+protocol LocationDetailsInteractorAction: class {
+    func backButtonTapped()
 }
 
 
-final class FindLocationInteractor {
-    var output: FindLocationInteractorOutput!
-    var action: FindLocationInteractorAction!
+final class LocationDetailsInteractor {
+    var output: LocationDetailsInteractorOutput!
+    var action: LocationDetailsInteractorAction!
     
-    let api: ForecastClient
+    private let api: ForecastClient
+    private let coordinate: CLLocationCoordinate2D
     
-    init(api apiClient: ForecastClient) {
+    init(api apiClient: ForecastClient, coordinate: CLLocationCoordinate2D) {
         self.api = apiClient
+        self.coordinate = coordinate
     }
 }
 
-extension FindLocationInteractor: FindLocationViewControllerOutput {
+extension LocationDetailsInteractor: LocationDetailsViewControllerOutput {
     func viewIsReady() {
-        // Request example to load the current weather with a query
-        // Documentation for using the OpenWeatherAPI, is available at https://openweathermap.org/api
-        api.perform(CurrentWeather.getCurrent(for: "london,uk")) { (result) in
-            print("""
-            --- EXAMPLE
-            --- Current weather for location "London, UK"
-            """)
-            dump(result)
-            print("--- END OF EXAMPLE ---")
+        output.forecastListDidStartLoading()
+
+        let latitudeString = String(coordinate.latitude)
+        let longitudeString = String(coordinate.longitude)
+        api.perform(ForecastList.getForecast(forLatitude: latitudeString,
+                                             longitude: longitudeString)) { [weak self] result in
+            self?.output.forecastListDidStopLoading()
+            
+            switch result {
+            case .success(let forecastList):
+                self?.output.forecastListDidLoad(forecastList)
+            case .failure(let error):
+                self?.output.forecastListDidFailLoading(withError: error)
+            }
         }
     }
-    
-    func locationSelected(at coordinate: CLLocationCoordinate2D) {
-        action.locationSelected(at: coordinate)
+
+    func backButtonTapped() {
+        action.backButtonTapped()
     }
 }

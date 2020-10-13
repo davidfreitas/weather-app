@@ -22,8 +22,4 @@ public final class ForecastClient: Client {
         }
         return request
     }
-    
-    public override func perform<Resource, Error>(_ request: Request<Resource, Error>, completion: @escaping (Result<Resource, Client.Error>) -> Void) -> URLSessionTask {
-        return super.perform(request, completion: completion)
-    }
 }

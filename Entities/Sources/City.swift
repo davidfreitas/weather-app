@@ -13,4 +13,5 @@ public struct City: Codable {
     public let country: String
     public let sunrise: Date
     public let sunset: Date
+    public let timezone: Int
 }

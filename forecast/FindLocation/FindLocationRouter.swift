@@ -11,15 +11,18 @@ import MapKit
 import API
 
 final class FindLocationRouter {
-    let api: ForecastClient
+    private let api: ForecastClient
+    private weak var viewController: UIViewController?
     
-    init(api apiClient: ForecastClient) {
+    init(api apiClient: ForecastClient, viewController: UIViewController) {
         self.api = apiClient
+        self.viewController = viewController
     }
 }
 
 extension FindLocationRouter: FindLocationInteractorAction {
     func locationSelected(at coordinate: CLLocationCoordinate2D) {
-
+        let detailsController = LocationDetailsConfig.setup(api: api, coordinate: coordinate)
+        viewController?.present(detailsController, animated: true)
     }
 }

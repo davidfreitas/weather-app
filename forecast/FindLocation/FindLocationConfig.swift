@@ -14,7 +14,7 @@ struct FindLocationConfig {
         let viewController = FindLocationViewController()
         let interactor = FindLocationInteractor(api: apiClient)
         let presenter = FindLocationPresenter()
-        let router = FindLocationRouter(api: apiClient)
+        let router = FindLocationRouter(api: apiClient, viewController: viewController)
         
         viewController.output = interactor
         interactor.action = router

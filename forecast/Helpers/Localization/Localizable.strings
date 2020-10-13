@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  forecast
+
+  Created by David Freitas on 13/10/20.
+  Copyright © 2020 SHAPE A/S. All rights reserved.
+*/
+
+"Alert-Back" = "Back";
+"Alert-Error" = "Error";
+
+"LocationDetails-Disclaimer" = "Weather data is provided by OpenWeatherMap.org";
+"LocationDetails-FiveDayForecast-Title" = "5 Day Forecast";
+"LocationDetails-UndefinedCity" = "Undefined City";

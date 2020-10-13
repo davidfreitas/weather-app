@@ -42,13 +42,13 @@ public struct Forecast: Codable {
 
     enum CodingKeys: String, CodingKey {
         case main, weather, wind
-        case deltaTime = "dt"
+        case date = "dt"
     }
 
     private let main: Main
     private let weather: [Weather]
     private let wind: Wind
-    public let deltaTime: TimeInterval
+    public let date: Date
     public var temperature: Double { main.temperature }
     public var feelsLike: Double { main.feelsLike }
     public var maximumTemperature: Double { main.maximumTemperature }
