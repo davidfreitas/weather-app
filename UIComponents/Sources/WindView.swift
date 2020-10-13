@@ -28,7 +28,7 @@ public final class WindView: UIView {
 
     private let windDirectionImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "arrow.right")
+        view.image = UIImage(systemName: "arrow.up")
         view.contentMode = .scaleAspectFit
         view.tintColor = .darkGray
         view.translatesAutoresizingMaskIntoConstraints = false
