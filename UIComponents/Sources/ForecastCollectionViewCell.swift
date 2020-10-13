@@ -34,11 +34,13 @@ public struct ForecastCollectionViewCellViewModel {
 final public class ForecastCollectionViewCell: UICollectionViewCell {
 
     private struct Constants {
-        static let backgroundColor: UIColor = UIColor(white: 0.98, alpha: 1.0)
-        static let iconHeight: CGFloat = 50
+        static let backgroundColor: UIColor = .secondaryBackground
+        static let iconHeight: CGFloat = 60
         static let cornerRadius: CGFloat = 15
-        static let padding: CGFloat = 10
+        static let horizontalPadding: CGFloat = 10
+        static let verticalPadding: CGFloat = 20
         static let spacing: CGFloat = 10
+        static let temperatureIconWidth: CGFloat = 45
     }
 
     private let stackView: UIStackView = {
@@ -53,7 +55,7 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.numberOfLines = 2
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 9)
+        label.font = UIFont.preferredFont(forTextStyle: .caption1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -68,7 +70,7 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
     private let maximumImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "sun.max.fill")
-        imageView.contentMode = .center
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .orange
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -76,7 +78,7 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
 
     private let maximumTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -84,7 +86,7 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
     private let maximumStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -100,7 +102,7 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
 
     private let minimumTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -108,7 +110,7 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
     private let minimumStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -150,15 +152,18 @@ final public class ForecastCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(minimumStackView)
         stackView.addArrangedSubview(windView)
         contentView.addSubview(stackView)
+        dateTimeLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.padding),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.padding),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.padding),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.padding),
-            iconImageView.heightAnchor.constraint(equalToConstant: Constants.iconHeight)
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.verticalPadding),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.verticalPadding),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.horizontalPadding),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.horizontalPadding),
+            iconImageView.heightAnchor.constraint(equalToConstant: Constants.iconHeight),
+            maximumImageView.widthAnchor.constraint(equalToConstant: Constants.temperatureIconWidth),
+            minimumImageView.widthAnchor.constraint(equalToConstant: Constants.temperatureIconWidth)
         ])
     }
 

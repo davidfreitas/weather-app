@@ -30,7 +30,7 @@ public final class WindView: UIView {
         let view = UIImageView()
         view.image = UIImage(systemName: "arrow.up")
         view.contentMode = .scaleAspectFit
-        view.tintColor = .darkGray
+        view.tintColor = .systemGray2
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -39,7 +39,7 @@ public final class WindView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.text = Localizable.WindView.windSpeedTitle
-        label.font = .preferredFont(forTextStyle: .caption2)
+        label.font = .preferredFont(forTextStyle: .caption1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

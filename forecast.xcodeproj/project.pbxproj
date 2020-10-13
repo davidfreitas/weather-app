@@ -42,6 +42,9 @@
 		6E0E6C162534E77100BB87B6 /* LocationDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6C022534E70200BB87B6 /* LocationDetailsPresenter.swift */; };
 		6E5DD46D2535EDA500094DF0 /* UIImage+OWM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DD4572535EAB700094DF0 /* UIImage+OWM.swift */; };
 		6E5DD4852535F1C400094DF0 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DD4842535F1C400094DF0 /* WindView.swift */; };
+		6E5DD4A1253620AD00094DF0 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DD4A0253620AD00094DF0 /* UIColor+Custom.swift */; };
+		6E5DD4A72536210500094DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3689B1D4221BE67E00E50ED5 /* Assets.xcassets */; };
+		6E5DD4AD2536213200094DF0 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DD4A0253620AD00094DF0 /* UIColor+Custom.swift */; };
 		6E6C56DA25353C900006F1E1 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C56D925353C900006F1E1 /* Forecast.swift */; };
 		6E6C56E225353CB60006F1E1 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C56E125353CB60006F1E1 /* Forecast.swift */; };
 		6E6C56ED253541A10006F1E1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C56EC253541A00006F1E1 /* City.swift */; };
@@ -167,6 +170,7 @@
 		6E0E6C022534E70200BB87B6 /* LocationDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsPresenter.swift; sourceTree = "<group>"; };
 		6E5DD4572535EAB700094DF0 /* UIImage+OWM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+OWM.swift"; sourceTree = "<group>"; };
 		6E5DD4842535F1C400094DF0 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
+		6E5DD4A0253620AD00094DF0 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		6E6C56D925353C900006F1E1 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		6E6C56E125353CB60006F1E1 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		6E6C56EC253541A00006F1E1 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -384,6 +388,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		6E5DD49F253620A200094DF0 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				6E5DD4A0253620AD00094DF0 /* UIColor+Custom.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		6E6C570B2535A3420006F1E1 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +421,7 @@
 		6E6C57372535B27A0006F1E1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6E5DD49F253620A200094DF0 /* Color */,
 				6E6C575D2535BA0B0006F1E1 /* Localization */,
 				6E6C575E2535BA130006F1E1 /* Temperature */,
 			);
@@ -703,6 +716,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5DD4A72536210500094DF0 /* Assets.xcassets in Resources */,
 				6E6C57802535BE830006F1E1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,6 +743,7 @@
 				6E0E6C062534E76700BB87B6 /* LocationDetailsConfig.swift in Sources */,
 				6E0E6C0A2534E76A00BB87B6 /* LocationDetailsViewController.swift in Sources */,
 				6E6C57392535B2920006F1E1 /* TemperatureConverter.swift in Sources */,
+				6E5DD4A1253620AD00094DF0 /* UIColor+Custom.swift in Sources */,
 				6E6C57602535BA290006F1E1 /* Localizable.swift in Sources */,
 				3689B1E3221BE8DD00E50ED5 /* FindLocationConfig.swift in Sources */,
 				6E0E6C122534E76E00BB87B6 /* LocationDetailsRouter.swift in Sources */,
@@ -780,6 +795,7 @@
 			files = (
 				6E5DD4852535F1C400094DF0 /* WindView.swift in Sources */,
 				6E6C57732535BD8A0006F1E1 /* SunriseSunsetView.swift in Sources */,
+				6E5DD4AD2536213200094DF0 /* UIColor+Custom.swift in Sources */,
 				6E6C57872535BEAF0006F1E1 /* Localizable.swift in Sources */,
 				6E6C57322535A3A10006F1E1 /* ForecastCollectionViewCell.swift in Sources */,
 				6E5DD46D2535EDA500094DF0 /* UIImage+OWM.swift in Sources */,

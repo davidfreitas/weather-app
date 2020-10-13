@@ -17,6 +17,7 @@ protocol LocationDetailsViewControllerOutput: class {
 final class LocationDetailsViewController: UIViewController {
 
     private struct Constants {
+        static let backgroundColor: UIColor = .systemBackground
         static let padding: CGFloat = 32
         static let animationDuration: TimeInterval = 0.3
 
@@ -34,19 +35,19 @@ final class LocationDetailsViewController: UIViewController {
 
         struct ForecastCell {
             static let reuseIdentifier: String = "ForecastCell"
-            static let size: CGSize = CGSize(width: 120, height: 200)
+            static let size: CGSize = CGSize(width: 120, height: 240)
             static let spacing: CGFloat = 10
         }
 
         struct StackView {
-            static let spacing: CGFloat = 15
+            static let spacing: CGFloat = 20
         }
     }
 
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "cloud.fill")
-        imageView.tintColor = UIColor(white: 0.98, alpha: 1.0)
+        imageView.tintColor = .secondaryBackground
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -95,7 +96,7 @@ final class LocationDetailsViewController: UIViewController {
 
     private lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.tintColor = .darkGray
+        button.tintColor = .systemGray2
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +106,7 @@ final class LocationDetailsViewController: UIViewController {
     private let cityLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title1)
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -154,7 +156,7 @@ final class LocationDetailsViewController: UIViewController {
     }
 
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = Constants.backgroundColor
         titleStackView.addArrangedSubview(cityLabel)
         titleStackView.addArrangedSubview(closeButton)
         stackView.addArrangedSubview(titleStackView)
@@ -167,6 +169,7 @@ final class LocationDetailsViewController: UIViewController {
         view.addSubview(activityIndicator)
         view.addSubview(disclaimarerLabel)
         cityLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        cityLabel.setContentCompressionResistancePriority(.required, for: .vertical)
     }
 
     private func setupConstraints() {
@@ -178,7 +181,6 @@ final class LocationDetailsViewController: UIViewController {
             activityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             closeButton.widthAnchor.constraint(equalToConstant: Constants.CloseButton.size.width),
-            closeButton.heightAnchor.constraint(equalToConstant: Constants.CloseButton.size.height),
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
@@ -190,7 +192,7 @@ final class LocationDetailsViewController: UIViewController {
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: Constants.padding * -2),
             collectionView.heightAnchor.constraint(equalToConstant: Constants.ForecastCell.size.height),
             disclaimarerLabel.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: Constants.StackView.spacing),
-            disclaimarerLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            disclaimarerLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.padding),
             disclaimarerLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             disclaimarerLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
         ])

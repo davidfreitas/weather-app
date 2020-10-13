@@ -62,7 +62,7 @@ public final class SunriseSunsetView: UIView {
     private let sunriseTimeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.font = .preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -88,7 +88,7 @@ public final class SunriseSunsetView: UIView {
     private let sunsetTimeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.font = .preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
