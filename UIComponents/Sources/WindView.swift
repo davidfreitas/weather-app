@@ -16,7 +16,7 @@ public struct WindViewModel {
 public final class WindView: UIView {
 
     private struct Constants {
-        static let directionIconSize: CGSize = CGSize(width: 15, height: 15)
+        static let directionIconHeight: CGFloat = 15
     }
 
     private let containerStackView: UIStackView = {
@@ -68,8 +68,7 @@ public final class WindView: UIView {
             containerStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             containerStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             containerStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            windDirectionImageView.widthAnchor.constraint(equalToConstant: Constants.directionIconSize.width),
-            windDirectionImageView.heightAnchor.constraint(equalToConstant: Constants.directionIconSize.height),
+            windDirectionImageView.heightAnchor.constraint(equalToConstant: Constants.directionIconHeight),
         ])
     }
 
