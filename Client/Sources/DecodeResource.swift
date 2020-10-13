@@ -11,6 +11,7 @@ import Foundation
 public func decodeResource<E>(_ resource: E.Type) -> (Data) throws -> E where E: Decodable {
     return { data in
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
         return try decoder.decode(resource, from: data)
     }
 }
