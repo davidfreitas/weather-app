@@ -14,7 +14,7 @@ final class LocationDetailsRouter {
     let api: ForecastClient
     weak var presentingViewController: UIViewController?
     
-    init(api apiClient: ForecastClient, presentingViewController: UIViewController) {
+    init(api apiClient: ForecastClient, presentingViewController: UIViewController?) {
         self.api = apiClient
         self.presentingViewController = presentingViewController
     }

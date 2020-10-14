@@ -22,7 +22,7 @@ final class FindLocationRouter {
 
 extension FindLocationRouter: FindLocationInteractorAction {
     func locationSelected(at coordinate: CLLocationCoordinate2D) {
-        let detailsController = LocationDetailsConfig.setup(api: api, coordinate: coordinate)
+        let detailsController = LocationDetailsConfig.setup(api: api, coordinate: coordinate, presentingViewController: viewController)
         viewController?.present(detailsController, animated: true)
     }
 }
