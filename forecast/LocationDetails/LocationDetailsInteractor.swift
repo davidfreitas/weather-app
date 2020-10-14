@@ -21,7 +21,6 @@ protocol LocationDetailsInteractorAction: class {
     func backButtonTapped()
 }
 
-
 final class LocationDetailsInteractor {
     var output: LocationDetailsInteractorOutput!
     var action: LocationDetailsInteractorAction!

@@ -70,6 +70,8 @@ extension LocationDetailsPresenter: LocationDetailsInteractorOutput {
             numberFormatter.negativeSuffix = ""
             let windSpeed = numberFormatter.string(from: NSNumber(value: forecast.windSpeed)) ?? "-"
             let windDirection = Float(forecast.windDirection) * Float.pi / 180 + Float.pi
+
+            numberFormatter.positiveSuffix = "%"
             let humidity = numberFormatter.string(from: NSNumber(value: forecast.humidity)) ?? "-"
 
             let viewModelForecast = LocationDetailsViewModel.Forecast(dateTime: dateTime,

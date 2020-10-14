@@ -30,10 +30,6 @@ final class FindLocationInteractor {
 }
 
 extension FindLocationInteractor: FindLocationViewControllerOutput {
-    func viewIsReady() {
-  
-    }
-    
     func locationSelected(at coordinate: CLLocationCoordinate2D) {
         action.locationSelected(at: coordinate)
     }

@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 protocol FindLocationViewControllerOutput: class {
-    func viewIsReady()
     func locationSelected(at coordinate: CLLocationCoordinate2D)
 }
 
@@ -36,8 +35,6 @@ final class FindLocationViewController: UIViewController {
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(findLocation(_:)))
         mapView.addGestureRecognizer(gesture)
-        
-        output.viewIsReady()
     }
     
     @objc
