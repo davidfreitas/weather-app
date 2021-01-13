@@ -43,12 +43,12 @@ public class LocationDetailsView: UIView {
         }
     }
 
-    enum Section {
+    private enum Section {
         case main
     }
 
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, ForecastCollectionViewCellViewModel>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, ForecastCollectionViewCellViewModel>
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, ForecastCollectionViewCellViewModel>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, ForecastCollectionViewCellViewModel>
 
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
