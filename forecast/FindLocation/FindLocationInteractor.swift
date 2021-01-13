@@ -7,7 +7,7 @@
 //
 
 import MapKit
-import API
+import Client
 import Entities
 
 protocol FindLocationInteractorOutput: class {

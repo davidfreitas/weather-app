@@ -27,7 +27,6 @@
 		3689B21A221BF62A00E50ED5 /* RequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B213221BF62000E50ED5 /* RequestParameters.swift */; };
 		3689B21B221BF62A00E50ED5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B212221BF62000E50ED5 /* Result.swift */; };
 		3689B21C221BF62A00E50ED5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B214221BF62000E50ED5 /* Utilities.swift */; };
-		3689B21E221BF63A00E50ED5 /* ForecastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B21D221BF63A00E50ED5 /* ForecastClient.swift */; };
 		3689B228221C03BB00E50ED5 /* Entities.h in Headers */ = {isa = PBXBuildFile; fileRef = 3689B226221C03BB00E50ED5 /* Entities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3689B22B221C03BB00E50ED5 /* Entities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3689B224221C03BB00E50ED5 /* Entities.framework */; };
 		3689B22C221C03BB00E50ED5 /* Entities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3689B224221C03BB00E50ED5 /* Entities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -62,6 +61,7 @@
 		6E6C57802535BE830006F1E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C577F2535BE830006F1E1 /* Localizable.strings */; };
 		6E6C57872535BEAF0006F1E1 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C57862535BEAF0006F1E1 /* Localizable.swift */; };
 		6E85BE6525AE6A3C003DE7B3 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85BE5E25AE6909003DE7B3 /* LocationDetailsView.swift */; };
+		6E85BE7525AE70CB003DE7B3 /* ForecastClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3689B21D221BF63A00E50ED5 /* ForecastClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				3689B233221C04C000E50ED5 /* Endpoints */,
-				3689B21D221BF63A00E50ED5 /* ForecastClient.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -328,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				3689B216221BF62000E50ED5 /* Client.swift */,
+				3689B21D221BF63A00E50ED5 /* ForecastClient.swift */,
 				3689B211221BF61F00E50ED5 /* HTTPMethod.swift */,
 				3689B215221BF62000E50ED5 /* Request.swift */,
 				3689B213221BF62000E50ED5 /* RequestParameters.swift */,
@@ -765,7 +765,6 @@
 			files = (
 				3689B235221C04CE00E50ED5 /* Weather.swift in Sources */,
 				6E6C56DA25353C900006F1E1 /* Forecast.swift in Sources */,
-				3689B21E221BF63A00E50ED5 /* ForecastClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +778,7 @@
 				3689B23D221C0C7800E50ED5 /* DecodeResource.swift in Sources */,
 				3689B219221BF62A00E50ED5 /* Request.swift in Sources */,
 				3689B217221BF62A00E50ED5 /* Client.swift in Sources */,
+				6E85BE7525AE70CB003DE7B3 /* ForecastClient.swift in Sources */,
 				3689B21A221BF62A00E50ED5 /* RequestParameters.swift in Sources */,
 				3689B237221C05F300E50ED5 /* APIError.swift in Sources */,
 			);

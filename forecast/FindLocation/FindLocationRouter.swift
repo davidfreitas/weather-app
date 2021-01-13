@@ -8,7 +8,7 @@
 //
 
 import MapKit
-import API
+import Client
 
 final class FindLocationRouter {
     private let api: ForecastClient

@@ -6,7 +6,7 @@
 //  Copyright © 2019 SHAPE A/S. All rights reserved.
 //
 
-import Client
+import Foundation
 
 public final class ForecastClient: Client {
     private let authParameters: QueryParameters

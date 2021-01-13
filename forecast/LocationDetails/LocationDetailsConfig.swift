@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import API
+import Client
 import CoreLocation
 
 struct LocationDetailsConfig {

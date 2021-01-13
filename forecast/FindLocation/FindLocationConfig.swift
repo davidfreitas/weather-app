@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import API
+import Client
 
 struct FindLocationConfig {
     static func setup(api apiClient: ForecastClient) -> UIViewController {

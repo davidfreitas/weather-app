@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import Client
 import API
 import Entities
 
