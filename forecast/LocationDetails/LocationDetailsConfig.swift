@@ -17,7 +17,7 @@ struct LocationDetailsConfig {
         let viewController = LocationDetailsViewController()
         let interactor = LocationDetailsInteractor(api: apiClient, coordinate: coordinate)
         let presenter = LocationDetailsPresenter()
-        let router = LocationDetailsRouter(api: apiClient, presentingViewController: presentingViewController)
+        let router = LocationDetailsRouter(presentingViewController: presentingViewController)
         
         viewController.output = interactor
         interactor.action = router

@@ -61,6 +61,7 @@
 		6E6C57732535BD8A0006F1E1 /* SunriseSunsetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C57722535BD8A0006F1E1 /* SunriseSunsetView.swift */; };
 		6E6C57802535BE830006F1E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C577F2535BE830006F1E1 /* Localizable.strings */; };
 		6E6C57872535BEAF0006F1E1 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C57862535BEAF0006F1E1 /* Localizable.swift */; };
+		6E85BE6525AE6A3C003DE7B3 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E85BE5E25AE6909003DE7B3 /* LocationDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		6E6C57722535BD8A0006F1E1 /* SunriseSunsetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseSunsetView.swift; sourceTree = "<group>"; };
 		6E6C577F2535BE830006F1E1 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6E6C57862535BEAF0006F1E1 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		6E85BE5E25AE6909003DE7B3 /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +378,7 @@
 				6E0E6C012534E6E200BB87B6 /* LocationDetailsRouter.swift */,
 				6E0E6C022534E70200BB87B6 /* LocationDetailsPresenter.swift */,
 				6E6C56FD25354B1D0006F1E1 /* LocationDetailsViewModel.swift */,
+				6E85BE5E25AE6909003DE7B3 /* LocationDetailsView.swift */,
 			);
 			path = LocationDetails;
 			sourceTree = "<group>";
@@ -630,22 +633,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "SHAPE A/S";
 				TargetAttributes = {
 					3689B1C9221BE67C00E50ED5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1230;
 					};
 					3689B1F0221BF51600E50ED5 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1230;
 					};
 					3689B203221BF5F000E50ED5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1230;
 					};
 					3689B223221C03BB00E50ED5 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1230;
 					};
 					6E6C57092535A3420006F1E1 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -749,6 +754,7 @@
 				6E0E6C122534E76E00BB87B6 /* LocationDetailsRouter.swift in Sources */,
 				3689B1E9221BE8F500E50ED5 /* FindLocationRouter.swift in Sources */,
 				3689B1CE221BE67C00E50ED5 /* AppDelegate.swift in Sources */,
+				6E85BE6525AE6A3C003DE7B3 /* LocationDetailsView.swift in Sources */,
 				6E0E6C0E2534E76C00BB87B6 /* LocationDetailsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,6 +894,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -949,6 +956,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -993,7 +1001,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.shape.forecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1013,7 +1021,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.shape.forecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1042,7 +1050,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1072,7 +1080,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1100,7 +1108,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.shape.Client;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1128,7 +1136,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.shape.Client;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1158,7 +1166,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1187,7 +1195,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.shape.Entities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct ForecastCollectionViewCellViewModel {
+public struct ForecastCollectionViewCellViewModel: Hashable {
     let dateTime: String
     let maximumTemperature: String
     let minimumTemperature: String
@@ -28,6 +28,14 @@ public struct ForecastCollectionViewCellViewModel {
         self.icon = icon
         self.windDirection = windDirection
         self.windSpeed = windSpeed
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(dateTime)
+    }
+
+    public static func == (lhs: ForecastCollectionViewCellViewModel, rhs: ForecastCollectionViewCellViewModel) -> Bool {
+        lhs.dateTime == rhs.dateTime
     }
 }
 

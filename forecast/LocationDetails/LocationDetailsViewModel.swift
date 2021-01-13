@@ -30,14 +30,14 @@ struct LocationDetailsViewModel {
         SunriseSunsetViewModel(sunriseTime: sunrise, sunsetTime: sunset)
     }
     
-    func forecastCellViewModel(forCellAtIndexPath indexPath: IndexPath) -> ForecastCollectionViewCellViewModel {
-        let forecast = forecastList[indexPath.row]
-        let viewModel = ForecastCollectionViewCellViewModel(dateTime: forecast.dateTime,
-                                                            maximumTemperature: forecast.maximumTemperature,
-                                                            minimumTemperature: forecast.minimumTemperature,
-                                                            icon: forecast.icon,
-                                                            windDirection: forecast.windDirection,
-                                                            windSpeed: forecast.windSpeed)
-        return viewModel
+    func forecastCellViewModels() -> [ForecastCollectionViewCellViewModel] {
+        forecastList.map { forecast -> ForecastCollectionViewCellViewModel in
+            ForecastCollectionViewCellViewModel(dateTime: forecast.dateTime,
+                                                maximumTemperature: forecast.maximumTemperature,
+                                                minimumTemperature: forecast.minimumTemperature,
+                                                icon: forecast.icon,
+                                                windDirection: forecast.windDirection,
+                                                windSpeed: forecast.windSpeed)
+        }
     }
 }

@@ -17,6 +17,7 @@ struct Localizable {
             "SunriseSunsetView-Sunset-Title".localized
         }
     }
+
     struct WindView {
         static var windDirectionTitle: String {
             "WindView-Direction-title".localized

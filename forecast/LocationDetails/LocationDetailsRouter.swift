@@ -7,15 +7,12 @@
 //  Copyright © 2019 SHAPE A/S. All rights reserved.
 //
 
-import MapKit
-import API
+import UIKit
 
 final class LocationDetailsRouter {
-    let api: ForecastClient
     weak var presentingViewController: UIViewController?
     
-    init(api apiClient: ForecastClient, presentingViewController: UIViewController?) {
-        self.api = apiClient
+    init(presentingViewController: UIViewController?) {
         self.presentingViewController = presentingViewController
     }
 }
